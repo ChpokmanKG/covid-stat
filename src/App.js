@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Container,Row,Col} from 'reactstrap';
+import CountryDropdown from "./components/Dropdown";
+import Statistic from "./components/Statistic";
+import RecoverStatistic from "./components/Top";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row className="mb-4 mt-4">
+        <Col md={3}>
+          <CountryDropdown />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={8}>
+          <Statistic />
+        </Col>
+        <Col md={4}>
+          <RecoverStatistic />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
